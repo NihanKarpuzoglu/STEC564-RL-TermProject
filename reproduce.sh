@@ -24,18 +24,19 @@ cd "$SCRIPT_DIR"
 pip install -e drone_dispatch_env -q --break-system-packages 2>/dev/null || true
 pip install torch numpy gymnasium pyyaml -q --break-system-packages 2>/dev/null || true
 
-python - <<PYEOF
+PYTHONIOENCODING=utf-8 python - <<PYEOF
 import sys, os, json, numpy as np, torch
-sys.path.insert(0, os.path.join("${SCRIPT_DIR}", "drone_dispatch_env"))
+_ROOT = os.getcwd()
+sys.path.insert(0, os.path.join(_ROOT, "drone_dispatch_env"))
 import drone_dispatch_env
 from drone_dispatch_env import evaluate, Config
 
-cfg_env = Config.from_yaml("${SCRIPT_DIR}/${CONFIG}")
+cfg_env = Config.from_yaml(os.path.join(_ROOT, "${CONFIG}"))
 seeds   = [int(s) for s in "${SEEDS}".split(",")]
 filt    = "${POLICY}"
-W       = "${SCRIPT_DIR}/weights"
+W       = os.path.join(_ROOT, "weights")
 
-sys.path.insert(0, os.path.join("${SCRIPT_DIR}", "code"))
+sys.path.insert(0, os.path.join(_ROOT, "code"))
 from bc        import load_bc
 from naive_dqn import load_naive_dqn
 from iql       import load_iql
