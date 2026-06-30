@@ -1,0 +1,22 @@
+drone_dispatch_env — START HERE
+================================
+
+1. Read README.md (next to this file) and, for the full API, the
+   Simulator Specification PDF in docs/ (Section 12 is the exact obs/action layout).
+
+2. Install (Python >= 3.10):
+       cd drone_dispatch_env          # the folder with pyproject.toml
+       python -m venv .venv
+       source .venv/bin/activate      # Windows: .venv\Scripts\activate
+       pip install -e .
+
+3. Sanity check (do this on Day 1):
+       python -m pytest tests -q                                      # 14 tests pass
+       bash reproduce.sh configs/eval_standard.yaml "0,1,2" greedy_nearest
+   (Windows without bash: python -m drone_dispatch_env.run_eval --config configs/eval_standard.yaml --seeds 0,1,2 --policy greedy_nearest)
+
+4. Offline dataset for the offline-RL part: data/D_logs.npz
+   (load via drone_dispatch_env.load_offline_dataset).
+
+Do NOT modify agent_interface.py — it is frozen. Your method must beat
+greedy_nearest on cost_per_order, graded on held-out seeds/config.

@@ -1,0 +1,25 @@
+# Standard evaluation config (released to students). Held-out "stress" config
+# and grading seeds are retained privately by the instructor.
+H: 20
+W: 20
+T_max: 500
+n_drones: 8
+k_max: 20
+lam: 0.3
+sla_steps: 60
+neighborhood: 4
+e_move: 0.01
+e_idle: 0.001
+c_rate: 0.05
+charge_threshold: 0.30
+n_nofly: 24
+n_hubs: 4
+init_soc: 1.0
+reward:
+  r_delivered: 10.0
+  r_ontime_bonus: 5.0
+  r_late_penalty: -0.1
+  r_dropped: -15.0
+  r_energy: -1.0
+  r_depletion: -50.0
+  r_noop: -0.01

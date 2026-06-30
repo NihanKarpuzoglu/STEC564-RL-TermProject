@@ -1,0 +1,9 @@
+lr: 3.0e-4
+batch_size: 256
+n_steps: 20000
+n_pairs: 2000
+hidden: [256, 128]
+seg_seed: 42
+log_freq: 500
+policy_steps: 60000
+device: cpu

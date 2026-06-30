@@ -1,0 +1,8 @@
+lr: 1.0e-3
+batch_size: 256
+n_steps: 50000
+gamma: 0.99
+tau: 0.005
+hidden: [256, 256]
+log_freq: 1000
+device: cpu

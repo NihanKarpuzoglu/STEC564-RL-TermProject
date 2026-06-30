@@ -1,0 +1,6 @@
+gymnasium>=0.29
+numpy>=1.24
+matplotlib>=3.7
+imageio>=2.31
+pulp>=2.7
+pyyaml>=6.0

@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: drone_dispatch_env
+Version: 0.1.0
+Summary: Operational drone-dispatch RL simulator (course term project env)
+Requires-Python: >=3.10
+Requires-Dist: gymnasium>=0.29
+Requires-Dist: numpy>=1.24
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: imageio>=2.31
+Requires-Dist: pulp>=2.7
+Requires-Dist: pyyaml>=6.0

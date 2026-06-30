@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drone_dispatch_env"
+version = "0.1.0"
+description = "Operational drone-dispatch RL simulator (course term project env)"
+requires-python = ">=3.10"
+dependencies = [
+    "gymnasium>=0.29",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "imageio>=2.31",
+    "pulp>=2.7",
+    "pyyaml>=6.0",
+]
+
+[tool.setuptools]
+py-modules = ["agent_interface"]
+
+[tool.setuptools.packages.find]
+include = ["drone_dispatch_env*"]
